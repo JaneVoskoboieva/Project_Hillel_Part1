@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My blog records</title>
+</head>
+<body>
+
+<h1>List of records:</h1>
+<ul>
+    {% for record in all_records %}
+        <strong>Title:</strong>{{ record[1] }} <br>
+        <strong>Description:</strong>{{ record[2] }} <br>
+        <i>id: {{ record[0] }} </i><br>
+    {% endfor %}
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editing the record</title>
+</head>
+<body>
+<form action="/edit" method="post" class="form_new_post">
+	<label><b><i>Please, enter the ID of the record you want to edit:</i></b></label>
+	<br>
+	<input type="text" name="id_for_edit" value="" required="">
+	<br><br>
+	<label><i>New title:</i></label>
+	<br>
+	<input type="text" name="editing_title" value="" required="">
+	<br><br>
+	<label><i>New description here:</i></label>
+	<br>
+	<textarea name="editing_description" cols=40 rows=7 required=""></textarea>
+	<input type="submit" value="SUBMIT">
+</form>
+</body>
+</html>
