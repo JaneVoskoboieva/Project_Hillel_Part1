@@ -5,11 +5,13 @@ import sql_module
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def start_page_of_blog():
     """ Function returns all records hat we have in our database"""
     all_records = sql_module.all_records()
     return render_template("index.html", title="All Records in the Blog are:", all_records=all_records)
+
 
 @app.route('/new_record', methods=['POST', 'GET'])
 def create_record():
@@ -20,6 +22,7 @@ def create_record():
         sql_module.add_record(title, description)
         flash(f"New record was added to the blog")
     return render_template("new_record.html")
+
 
 @app.route('/edit', methods=['POST', 'GET'])
 def edit_records():
@@ -36,6 +39,7 @@ def edit_records():
 
     return render_template("edit_record.html")
 
+
 @app.route('/delete', methods=['POST', 'GET'])
 def delete_record():
     if request.method == "POST":
@@ -49,5 +53,6 @@ def delete_record():
 
     return render_template("delete_record.html", identifier=id)
 
-if __name__=='__main__':
+
+if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)

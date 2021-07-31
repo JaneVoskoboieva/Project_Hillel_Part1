@@ -1,5 +1,6 @@
 import sqlite3
 
+
 def create_database():
     """Function for creating database"""
     connection = sqlite3.connect('blog.sqlite3')
@@ -13,6 +14,7 @@ def create_database():
     connection.close()
     return cursor
 
+
 def all_records():
     """Function for showing up all records from the blog"""
     connection = sqlite3.connect('blog.sqlite3')
@@ -20,6 +22,7 @@ def all_records():
     cursor.execute("""SELECT * FROM records""")
     all_records = cursor.fetchall()
     return all_records
+
 
 def add_record(title, description):
     """Function for adding records to the blog
@@ -34,6 +37,7 @@ def add_record(title, description):
     connection.close()
     return None
 
+
 def edit_record(identifier, title, description):
     """Function edit records
     required:
@@ -47,6 +51,7 @@ def edit_record(identifier, title, description):
     connection.commit()
     connection.close()
     return None
+
 
 def delete_record(identifier):
     """Function deletes record
