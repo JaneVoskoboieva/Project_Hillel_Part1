@@ -6,7 +6,7 @@ def create_database():
     cursor = connection.cursor()
     sql = """CREATE TABLE IF NOT EXISTS records (
     id integer NOT NULL PRIMARY KEY AUTOINCREMENT,
-    Title TEXT
+    Title TEXT,
     Description TEXT)"""
     cursor.execute(sql)
     connection.commit()
